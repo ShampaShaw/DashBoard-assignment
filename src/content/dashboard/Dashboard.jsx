@@ -5,6 +5,8 @@ import { FcBearish } from "react-icons/fc";
 import cart from '../../assests/cart.png'
 import customer from '../../assests/customer.png'
 import product from '../../assests/product.png'
+import Form from '../../components/form/Form';
+import DataTable from '../../components/table/dataTable/DataTable';
 
 function Dashboard() {
   return (
@@ -29,6 +31,10 @@ function Dashboard() {
           <div className='title'>Top Selling Product</div>
           <h1 className='productName'>Laptop</h1>
         </div>
+      </div>
+      <div className='form-dataTable'>
+        <div className='form'><Form/></div>
+        <div className='dataTable'><DataTable/></div>
       </div>
     </div>
   )
