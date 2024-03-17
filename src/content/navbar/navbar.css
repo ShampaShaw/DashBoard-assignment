@@ -1,0 +1,87 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 60px;
+    background-color: #628aac; /* Change as per your design */
+    color: #fff; /* Change as per your design */
+    overflow: hidden;
+  }
+  
+  .logo img {
+    height: 40px; /* Adjust as needed */
+  }
+  
+  .title {
+    font-size: 20px; /* Adjust as needed */
+  }
+  
+  .buttons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .mode {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .account {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .mode,
+.account .account-icon {
+  font-size: 24px; /* Adjust the size as needed */
+  display: flex;
+  align-items: center;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    gap: 100px;
+    background-color: #b3c5ec;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    min-width: 200px; /* Initial width */
+  }
+  
+  .avatar img {
+    
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    align-items: center;
+    display: flex;
+  }
+  
+  .name {
+    font-size: 16px;
+    margin-bottom: 5px;
+    text-align: center;
+    flex: 1; /* Allow name to expand and increase width of dropdown */
+  }
+
+  .settings button{
+    display: flex;
+    align-items: center;
+    background-color: #b3c5ec;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .logout button{
+    display: flex;
+    align-items: center;
+    background-color: #b3c5ec;
+    border-radius: 10px;
+    cursor: pointer;
+  }
