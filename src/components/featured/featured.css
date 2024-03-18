@@ -1,0 +1,88 @@
+.featured{
+    flex: 2;
+    width: 500px;
+    -webkit-box-shadow: 10px 10px 5px -1px rgba(67, 103, 116, 0.62);
+    -moz-box-shadow: 10px 10px 5px -1px rgba(41,80,94,0.62);
+    box-shadow: 10px 10px 5px -1px rgba(41,80,94,0.62);
+    padding: 10px;
+}
+
+.top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.i{
+    font-size: 40px;
+    color: rgb(16, 70, 92);
+
+}
+
+.bottom{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    justify-content: center;
+}
+
+.featuredChart{
+    width: 150px;
+    height: 150px;
+}
+
+.featuredItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.featuredTitle{
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(16, 70, 92);
+}
+
+.featuredMoney{
+    font-size: 40px;
+  font-weight: bold;
+  color: rgb(16, 70, 92);
+}
+
+
+
+.featuredDetail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.featuredDetailsItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.featuredDetails{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 100px;
+}
+
+
+.featuredDetailsTitle{
+    text-align: center;
+}
+
+.featuredDetailsMoney{
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(16, 70, 92);
+    text-align: center;
+}

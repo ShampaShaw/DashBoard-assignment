@@ -1,13 +1,7 @@
-.container{
+.areaC{
+    flex: 5;
+    width: 750px;
     -webkit-box-shadow: 10px 10px 5px -1px rgba(67, 103, 116, 0.62);
     -moz-box-shadow: 10px 10px 5px -1px rgba(41,80,94,0.62);
     box-shadow: 10px 10px 5px -1px rgba(41,80,94,0.62);
 }
-
-.custom-table {
-    background-color: #f0f0f0; /* Set background color */
-  }
-  
-  .custom-table .rdt_TableRow {
-    font-weight: bold; /* Make row text bold */
-  }

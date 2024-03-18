@@ -1,8 +1,8 @@
 import React from 'react';
-import './dataTable.css'; // Added CSS file
-import DataTable from 'react-data-table-component'; // Changed from 'Table' to 'DataTable'
+import './dataTable.css';
+import Table from 'react-data-table-component';
 
-function DataTableComponent() {
+function DataTable({ data }) {
   const columns = [
     {
       name: 'Sl No.',
@@ -25,41 +25,30 @@ function DataTableComponent() {
       sortable: true,
     },
     {
+      name: 'Email',
+      selector: row => row.email,
+      sortable: true,
+    },
+    {
       name: 'Date',
       selector: row => row.date,
       sortable: true,
     },
   ];
 
+  // Sample initial data
+  const initialData = [
+    { id: 1, name: 'Laptop', Sales: 50, customerName: 'John Doe', email: 'john@example.com', date: '12/12/2021' },
+    { id: 2, name: 'Mobile', Sales: 30, customerName: 'Jane Doe', email: 'jane@example.com', date: '12/12/2021' },
+    { id: 3, name: 'Headphone', Sales: 20, customerName: 'James Smith', email: 'james@example.com', date: '12/12/2021' },
+    // Add more initial data as needed
+  ];
 
-    const data = [
-        { id: 1, name: 'Laptop', Sales: 50, customerName: 'John Doe', date: '12/12/2021' },
-        { id: 2, name: 'Mobile', Sales: 30, customerName: 'John Doe', date: '12/12/2021' },
-        { id: 3, name: 'Headphone', Sales: 20, customerName: 'John Doe', date: '12/12/2021' },
-        { id: 4, name: 'Laptop', Sales: 50, customerName: 'John Doe', date: '12/12/2021' },
-        { id: 5, name: 'Mobile', Sales: 30, customerName: 'John Doe', date: '12/12/2021' },
-        { id: 6, name: 'Headphone', Sales: 20, customerName: 'John Doe', date: '12/12/2021' },
-        { id: 7, name: 'Laptop', Sales: 50, customerName: 'John Doe', date: '12/12/2021' },
-        { id: 8, name: 'Mobile', Sales: 30, customerName: 'John Doe', date: '12/12/2021' },
-        { id: 9, name: 'Headphone', Sales: 20, customerName: 'John Doe', date: '12/12/2021' },
-        { id: 10, name: 'Laptop', Sales: 50, customerName: 'John Doe', date: '12/12/2021' },
-        { id: 11, name: 'Mobile', Sales: 30, customerName: 'John Doe', date: '12/12/2021' },
-        { id: 12, name: 'Headphone', Sales: 20, customerName: 'John Doe', date: '12/12/2021' },
-        { id: 13, name: 'Laptop', Sales: 50, customerName: 'John Doe', date: '12/12/2021' },
-        { id: 14, name: 'Mobile', Sales: 30, customerName: 'John Doe', date: '12/12/2021' },
-    ];
-    
-    return (
-      console.log(data),
-      console.log(columns),
-        <div className='container'>
-          <DataTable
-            columns={columns}
-            data={data}
-            fixedHeader
-            ></DataTable>
-        </div>
-      );
-    }
-    
-    export default DataTableComponent;
+  return (
+    <div className='data-table' style={{ width: '100%', height: '100%' }}>
+      <Table columns={columns} data={data || initialData} fixedHeader style={{ width: '100%', height: '100%' }} /> {/* Use initial data if no data is provided */}
+    </div>
+  );
+}
+
+export default DataTable;
