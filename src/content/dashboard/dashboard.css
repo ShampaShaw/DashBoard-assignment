@@ -145,7 +145,7 @@ box-shadow: 10px 10px 5px -1px rgba(41,80,94,0.62);
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
+  gap: 60px;
   margin-top: 20px;
     padding: 20px;
 }
@@ -167,11 +167,7 @@ box-shadow: 10px 10px 5px -1px rgba(41,80,94,0.62);
     border-width: 2px;
     background-color: rgb(231, 240, 250);
     border-radius: 4px;
-    box-shadow: 0px 1px 7px 0px gray;
-}
-
-.dataTable:hover {
-  -webkit-box-shadow: 10px 10px 5px -1px rgba(67, 103, 116, 0.62);
+    -webkit-box-shadow: 10px 10px 5px -1px rgba(67, 103, 116, 0.62);
 -moz-box-shadow: 10px 10px 5px -1px rgba(41,80,94,0.62);
 box-shadow: 10px 10px 5px -1px rgba(41,80,94,0.62);
 }
@@ -195,5 +191,19 @@ box-shadow: 10px 10px 5px -1px rgba(41,80,94,0.62);
 .charts{
   display: flex;
   padding: 5px 20px;
-  gap: 20px;
+  gap: 100px;
+}
+
+.chart-table{
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  gap: 100px;
+}
+
+.circular-contact{
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  gap: 100px;
 }

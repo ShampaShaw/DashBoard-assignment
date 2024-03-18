@@ -11,6 +11,9 @@ import earning from '../../assests/income.png'
 import Featured from '../../components/featured/Featured';
 import LineC from '../../components/charts/line/Line';
 import AreaC from '../../components/charts/areaChart/AreaC';
+import BarC from '../../components/charts/barC/BarC';
+import Scatter from '../../components/charts/scatter/Scatter';
+import Contact from '../../components/table/contact/Contact';
 
 function Dashboard() {
   return (
@@ -44,7 +47,7 @@ function Dashboard() {
       </div>
       <div className='charts'>
         <Featured/>
-        <AreaC/>
+        <LineC/>
       </div>
       <div className='form-dataTable'>
         <div className='form'><Form/></div>
@@ -52,6 +55,14 @@ function Dashboard() {
         <h1>DATA TABLE</h1>
         <DataTable className='table'/>
         </div>
+      </div>
+      <div className='chart-table'>
+        <Scatter/>
+        <BarC/>
+      </div>
+      <div className='circular-contact'>
+        <AreaC/>
+        <Contact/>
       </div>
     </div>
   )

@@ -12,6 +12,7 @@ function Form() {
   const [customerName, setCustomerName] = useState('');
   const [email, setEmail] = useState('');
   const [data, setData] = useState([]); // State to store the data
+  const [message, setMessage] = useState(''); // State to store the message
 
   const handleAddProduct = (e) => {
     e.preventDefault();
@@ -30,6 +31,12 @@ function Form() {
     setCustomerName('');
     setEmail('');
     setStartDate(new Date());
+    // Set message
+    setMessage('Data added successfully🎉!');
+    // Clear message after 3 seconds
+    setTimeout(() => {
+      setMessage('');
+    }, 3000);
   };
 
   return (
@@ -87,6 +94,7 @@ function Form() {
             <input type='submit' value='Add Product' />
           </div>
         </form>
+        {message && <div className='success-message'>{message}</div>}
       </div>
     </div>
   );

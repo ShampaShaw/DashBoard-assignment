@@ -1,6 +1,6 @@
 .featured{
-    flex: 2;
-    width: 500px;
+    width: 550px;
+    height: 550px;
     -webkit-box-shadow: 10px 10px 5px -1px rgba(67, 103, 116, 0.62);
     -moz-box-shadow: 10px 10px 5px -1px rgba(41,80,94,0.62);
     box-shadow: 10px 10px 5px -1px rgba(41,80,94,0.62);
