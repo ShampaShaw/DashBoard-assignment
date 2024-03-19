@@ -1,7 +1,6 @@
 import React from 'react'
 import './dataTable.css'
-import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
-import Form from '../../form/Form';
+import { DataGrid} from '@mui/x-data-grid';
 
 const columns = [
   { field: 'id', headerName: 'ID', width: 70 },
