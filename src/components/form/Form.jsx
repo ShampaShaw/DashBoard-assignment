@@ -9,18 +9,17 @@ function Form({ onSubmit }) {
     const year = date.getFullYear();
     const month = (date.getMonth() + 1).toString().padStart(2, '0');
     const day = date.getDate().toString().padStart(2, '0');
-    return `${year}-${month}-${day}`;
+    return `${year}`;
   };
 
   const [formData, setFormData] = useState(() => {
-    const initialId = 1; // Initial id value
     return {
-      id: initialId,
-      customerName: '',
+      User_Name: '',
       email: '',
       sales: '',
       productName: '',
-      date: getCurrentDate()
+      date: getCurrentDate(),
+        year: getCurrentDate()
     };
   });
 
@@ -36,13 +35,14 @@ function Form({ onSubmit }) {
     }, 3000);
 
     // Reset form data
-    setFormData((prevFormData) => ({
-      id: prevFormData.id + 1,
-      customerName: '',
+    setFormData(() => ({
+      //id: prevFormData + 1,
+      User_Name: '',
       email: '',
       sales: '',
       productName: '',
-      date: getCurrentDate()
+      date: getCurrentDate(),
+        year: getCurrentDate()
     }));
   };
 
@@ -73,9 +73,9 @@ function Form({ onSubmit }) {
             <div className='input-box'>
               <input
                 type='number'
-                placeholder='Enter Customer Name'
-                value={formData.customerName}
-                onChange={(e) => setFormData({ ...formData, customerName: e.target.value })}
+                placeholder='Enter User Name'
+                value={formData.User_Name}
+                onChange={(e) => setFormData({ ...formData, User_Name: e.target.value })}
               />
             </div>
             <div className='input-box'>

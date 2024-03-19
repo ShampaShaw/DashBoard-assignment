@@ -6,7 +6,6 @@
   height: 60px;
   background-color: #628aac; /* Change as per your design */
   color: #fff; /* Change as per your design */
-  overflow: hidden;
 }
 
 .logo img {
@@ -45,17 +44,16 @@
 }
 
 .dropdown {
-  position: absolute;
-  top: calc(100% + 10px); /* Adjust as needed */
+  position: absolute; /* Change position to absolute */
+  top: calc(100% + 10px); /* Adjust top position as needed */
   right: 0;
-  gap: 100px;
-  text-align: center;
   background-color: #b3c5ec;
-  align-items: center;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 10px;
   min-width: 200px; /* Initial width */
+  display: flex; /* Add display flex */
+  flex-direction: column; /* Align items vertically */
 }
 
 .avatar img {

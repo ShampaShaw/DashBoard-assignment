@@ -6,7 +6,7 @@ import { IoSunnyOutline } from 'react-icons/io5';
 import { IoPersonCircleOutline } from 'react-icons/io5';
 import User from '../../assests/user.png'
 
-function Navbar() {
+const Navbar = () => {
   const [darkMode,setDarkMode] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
 

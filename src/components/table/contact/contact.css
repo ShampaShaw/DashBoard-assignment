@@ -1,5 +1,7 @@
 .contact {
+    flex: 4;
     width: 500px;
+    flex-direction: column;
     -webkit-box-shadow: 10px 10px 5px -1px rgba(67, 103, 116, 0.62);
     -moz-box-shadow: 10px 10px 5px -1px rgba(41, 80, 94, 0.62);
     box-shadow: 10px 10px 5px -1px rgba(41, 80, 94, 0.62);
@@ -65,5 +67,12 @@
     font-weight: bold;
     text-align: center;
     margin-top: 20px;
+}
+
+@media (max-width: 768px){
+    .contact{
+        display: flex;
+        flex-direction: column;
+    }
 }
   

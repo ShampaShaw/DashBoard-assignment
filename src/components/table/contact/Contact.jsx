@@ -27,11 +27,11 @@ function Contact() {
 
   return (
     <div className='contact'>
-      <div className='title2'>SEND MESSAGE TO THE CUSTOMER</div>
+      <div className='title2'>CONTACT USER</div>
       <form onSubmit={handleSubmit}>
         <input
           type='text'
-          placeholder='Customer Name'
+          placeholder='User Name'
           value={name}
           onChange={(e) => setName(e.target.value)}
         />

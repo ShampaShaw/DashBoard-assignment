@@ -1,52 +1,53 @@
-import React from 'react'
-import './dataTable.css'
-import { DataGrid} from '@mui/x-data-grid';
+import React from 'react';
+import styled from 'styled-components';
 
-const columns = [
-  { field: 'id', headerName: 'ID', width: 70 },
-  { field: 'Name', headerName: 'CUSTOMER NAME', width: 100 },
-  {
-    field: 'Email',
-    headerName: 'EMAIL ADDRESS',
-    type: 'string',
-    width: 130,
-  },
-  {
-    field: 'Sales',
-    headerName: 'SALES AMOUNT($)',
-    type: 'number',
-    width: 130,
-  },
-  {
-    field: 'Product',
-    headerName: 'PRODUCT NAME',
-    type: 'string',
-    width: 130,
-  },
-];
+const StyledTable = styled.table`
+  width: 500px;
+  border-collapse: collapse;
+  border: 1px solid #ddd; /* Add border to the entire table */
+`;
 
-const rows = [
-  { id: 1, Name: '1', Email: "shampa@123",Sales: 4000,Product: "Laptop" },
-  { id: 2, Name: '2', Email: "shampa@123",Sales: 3000,Product: "Mobile" },
-  { id: 3, Name: '5', Email: "shampa@123",Sales: 2000,Product: "Tablet"},
-  { id: 4, Name: '8', Email: "shampa@123",Sales: 2780,Product: "Desktop"},
-  { id: 5, Name: '10', Email: "shampa@123",Sales: 1890,Product: "Watch"},
-  { id: 6, Name: '12', Email: "shampa@123",Sales: 2390,Product: "Camera"},
-];
+const StyledTh = styled.th`
+  border-left: 1px solid #ddd; /* Add border to the left side of each cell */
+  border-right: 1px solid #ddd; /* Add border to the right side of each cell */
+  padding: 8px;
+  text-align: center;
+  background-color: #557c83;
+`;
 
-export default function DataTable() {
+const StyledTd = styled.td`
+  border-left: 1px solid #ddd; /* Add border to the left side of each cell */
+  border-right: 1px solid #ddd; /* Add border to the right side of each cell */
+  padding: 8px;
+`;
+
+const DataTable = ({ data }) => {
   return (
-    <div style={{ height: 400, width: 400, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'lightblue' }}>
-  <DataGrid
-    rows={rows}
-    columns={columns}
-    initialState={{
-      pagination: {
-        paginationModel: { page: 0, pageSize: 5 },
-      },
-    }}
-    pageSizeOptions={[5, 10]}
-  />
-</div>
+    <div className="datatable-container">
+      <StyledTable>
+        <thead>
+          <tr>
+            <StyledTh>ID</StyledTh>
+            <StyledTh>User Name</StyledTh>
+            <StyledTh>Email</StyledTh>
+            <StyledTh>Sales</StyledTh>
+            <StyledTh>Product</StyledTh>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map(item => (
+            <tr key={item.id}>
+              <StyledTd>{item.id}</StyledTd>
+              <StyledTd>{item.User_Name}</StyledTd>
+              <StyledTd>{item.email}</StyledTd>
+              <StyledTd>{item.sales}</StyledTd>
+              <StyledTd>{item.productName}</StyledTd>
+            </tr>
+          ))}
+        </tbody>
+      </StyledTable>
+    </div>
   );
 }
+
+export default DataTable;

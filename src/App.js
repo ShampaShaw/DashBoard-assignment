@@ -11,8 +11,8 @@ function App() {
   };
 
   return (
-    <div className={darkMode ? 'app dark' : 'app bright'}>
-      <Navbar toggleTheme={toggleTheme} />
+    <div className="app">
+    <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
       <Dashboard />
       <Footer />
     </div>

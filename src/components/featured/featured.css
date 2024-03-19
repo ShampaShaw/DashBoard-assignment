@@ -86,3 +86,25 @@
     color: rgb(16, 70, 92);
     text-align: center;
 }
+
+@media (max-width: 768px) {
+    .featured {
+      padding: 5px; /* Decrease padding for smaller screens */
+        width: 400px; /* Adjust size for smaller screens */
+        height: 400px; /* Adjust size for smaller screens */
+    }
+
+    .top {
+      gap: 10px; /* Adjust gap for smaller screens */
+      
+    }
+  
+    .featuredChart {
+      width: 80px; /* Adjust size for smaller screens */
+      height: 80px; /* Adjust size for smaller screens */
+    }
+  
+    .featuredItem {
+      gap: 5px; /* Adjust gap for smaller screens */
+    }
+  }
