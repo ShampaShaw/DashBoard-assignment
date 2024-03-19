@@ -27,7 +27,7 @@ function Navbar() {
       <div className='logo'>
         <img src={logo} alt='Logo' />
       </div>
-      <div className='title'>Dashboard Title</div>
+      <div className='title1'>ADMIN DASHBOARD</div>
       <div className='buttons'>
       <div className='mode-switch'>
         <button className='mode' onClick={handleToggleMode}>

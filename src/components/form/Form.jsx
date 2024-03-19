@@ -2,41 +2,48 @@ import React, { useState } from 'react';
 import './form.css';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import DataTable from '../table/dataTable/DataTable';
-import 'react-datepicker/dist/react-datepicker.css'; // Import the default CSS for react-datepicker
 
-function Form() {
-  const [startDate, setStartDate] = useState(new Date());
-  const [productName, setProductName] = useState('');
-  const [sales, setSales] = useState('');
-  const [customerName, setCustomerName] = useState('');
-  const [email, setEmail] = useState('');
-  const [data, setData] = useState([]); // State to store the data
-  const [message, setMessage] = useState(''); // State to store the message
+function Form({ onSubmit }) {
+  const getCurrentDate = () => {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const day = date.getDate().toString().padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  };
+
+  const [formData, setFormData] = useState(() => {
+    const initialId = 1; // Initial id value
+    return {
+      id: initialId,
+      customerName: '',
+      email: '',
+      sales: '',
+      productName: '',
+      date: getCurrentDate()
+    };
+  });
+
+  const [message, setMessage] = useState('');
 
   const handleAddProduct = (e) => {
     e.preventDefault();
-    const newData = {
-      id: data.length + 1,
-      name: productName,
-      Sales: sales,
-      customerName: customerName,
-      email: email,
-      date: startDate.toLocaleDateString(), // Format the date to string
-    };
-    setData([...data, newData]); // Add new data to the existing data array
-    // Reset form fields
-    setProductName('');
-    setSales('');
-    setCustomerName('');
-    setEmail('');
-    setStartDate(new Date());
-    // Set message
+
+    onSubmit(formData);
     setMessage('Data added successfully🎉!');
-    // Clear message after 3 seconds
     setTimeout(() => {
       setMessage('');
     }, 3000);
+
+    // Reset form data
+    setFormData((prevFormData) => ({
+      id: prevFormData.id + 1,
+      customerName: '',
+      email: '',
+      sales: '',
+      productName: '',
+      date: getCurrentDate()
+    }));
   };
 
   return (
@@ -49,8 +56,8 @@ function Form() {
               <input
                 type='text'
                 placeholder='Product Name'
-                value={productName}
-                onChange={(e) => setProductName(e.target.value)}
+                value={formData.productName}
+                onChange={(e) => setFormData({ ...formData, productName: e.target.value })}
                 required
               />
             </div>
@@ -58,35 +65,35 @@ function Form() {
               <input
                 type='number'
                 placeholder='Sales'
-                value={sales}
-                onChange={(e) => setSales(e.target.value)}
+                value={formData.sales}
+                onChange={(e) => setFormData({ ...formData, sales: e.target.value })}
                 required
               />
             </div>
             <div className='input-box'>
               <input
-                type='text'
+                type='number'
                 placeholder='Enter Customer Name'
-                value={customerName}
-                onChange={(e) => setCustomerName(e.target.value)}
+                value={formData.customerName}
+                onChange={(e) => setFormData({ ...formData, customerName: e.target.value })}
               />
             </div>
             <div className='input-box'>
               <input
                 type='email'
                 placeholder='Enter Email'
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 required
               />
             </div>
             <div className='input-box'>
               <DatePicker
-                selected={startDate}
-                onChange={(date) => setStartDate(date)}
-                dateFormat='MMMM d, yyyy'
+                selected={new Date(formData.date)}
+                onChange={(date) => setFormData({ ...formData, date: date.toISOString().split('T')[0] })}
+                dateFormat='yyyy-MM-dd'
                 placeholderText='Select Date'
-                className='date-picker'
+                required
               />
             </div>
           </div>

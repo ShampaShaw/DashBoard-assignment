@@ -1,28 +1,29 @@
 import React from 'react'
 import './dataTable.css'
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
+import Form from '../../form/Form';
 
 const columns = [
   { field: 'id', headerName: 'ID', width: 70 },
-  { field: 'Name', headerName: 'Name', width: 100 },
+  { field: 'Name', headerName: 'CUSTOMER NAME', width: 100 },
   {
     field: 'Email',
-    headerName: 'Email',
+    headerName: 'EMAIL ADDRESS',
     type: 'string',
     width: 130,
   },
   {
     field: 'Sales',
-    headerName: 'Sales',
+    headerName: 'SALES AMOUNT($)',
     type: 'number',
     width: 130,
   },
   {
     field: 'Product',
-    headerName: 'Product',
+    headerName: 'PRODUCT NAME',
     type: 'string',
     width: 130,
-  }
+  },
 ];
 
 const rows = [
@@ -36,17 +37,17 @@ const rows = [
 
 export default function DataTable() {
   return (
-    <div style={{ height: 400, width: '100%' }}>
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        initialState={{
-          pagination: {
-            paginationModel: { page: 0, pageSize: 5 },
-          },
-        }}
-        pageSizeOptions={[5, 10]}
-      />
-    </div>
+    <div style={{ height: 400, width: 400, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'lightblue' }}>
+  <DataGrid
+    rows={rows}
+    columns={columns}
+    initialState={{
+      pagination: {
+        paginationModel: { page: 0, pageSize: 5 },
+      },
+    }}
+    pageSizeOptions={[5, 10]}
+  />
+</div>
   );
 }

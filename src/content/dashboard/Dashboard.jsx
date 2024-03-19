@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './dashboard.css'
 import { FcBullish } from "react-icons/fc";
 import { FcBearish } from "react-icons/fc";
@@ -16,6 +16,15 @@ import Scatter from '../../components/charts/scatter/Scatter';
 import Contact from '../../components/table/contact/Contact';
 
 function Dashboard() {
+
+  const [tableData, setTableData] = useState([]);
+
+  const handleFormSubmit = (formData) => {
+    setTableData([...tableData, formData]);
+    console.log(formData);
+  };
+
+
   return (
     <div className='dashboard'>
       <div className='container'>
@@ -50,10 +59,10 @@ function Dashboard() {
         <LineC/>
       </div>
       <div className='form-dataTable'>
-        <div className='form'><Form/></div>
+        <div className='form'><Form onSubmit={handleFormSubmit}/></div>
         <div className='dataTable'>
         <h1>DATA TABLE</h1>
-        <DataTable className='table'/>
+        <DataTable data={tableData} className='table'/>
         </div>
       </div>
       <div className='chart-table'>
