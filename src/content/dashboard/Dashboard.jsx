@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState} from 'react'
 import './dashboard.css'
 import { FcBullish } from "react-icons/fc";
 import { FcBearish } from "react-icons/fc";
@@ -19,10 +19,6 @@ import { data } from '../../assests/data';
 function Dashboard() {
 
   const [tableData, setTableData] = useState(data);
-  const [formDataForChart, setFormDataForChart] = useState([]); // State to store form data for the chart
-  const [scatterChartData, setScatterChartData] = useState([]); // State to store scatter chart data
-  const [areaChartData, setAreaChartData] = useState([]); // State to store area chart data
-
 
   const handleFormSubmit = (formData) => {
     const newData = {
@@ -65,7 +61,7 @@ function Dashboard() {
       </div>
       <div className='charts'>
         <Featured/>
-        <LineC/>
+        <div className='LChart'><LineC/></div>
       </div>
       <div className='form-dataTable'>
         <div className='form'><Form onSubmit={handleFormSubmit}/></div>

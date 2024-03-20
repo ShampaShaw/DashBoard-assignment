@@ -62,3 +62,17 @@
     background-color: #193a47;
   }
   
+
+  @media (max-width: 768px) {
+    .input-box input,
+    .date-picker {
+      width: 80%; /* Adjust width for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .input-box input,
+    .date-picker {
+      width: 100%; /* Adjust width for even smaller screens */
+    }
+  }

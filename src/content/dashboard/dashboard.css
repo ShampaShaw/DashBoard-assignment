@@ -166,12 +166,62 @@
     justify-content: center;
   }
 
+}
+
+  .charts,
+.chart-table,
+.circular-contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
+}
+
+@media (max-width: 1024px) {
   .charts,
   .chart-table,
   .circular-contact {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .salesBox,
+  .customer,
+  .earning,
+  .product {
+    width: 100%;
+    height: auto;
+  }
+
+  .form-dataTable {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .form{
+    width: 500px;
+  }
+
+  .charts,
+  .chart-table,
+  .circular-contact {
+    flex-direction: row;
     padding: 10px;
     gap: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .areaC{
+    width: 300px;
+  
   }
 }
 
@@ -179,4 +229,19 @@
   .container {
     gap: 20px;
   }
+
+  .charts,
+  .chart-table,
+  .circular-contact {
+    gap: 20px;
+  }
+
+  .form{
+    width: 300px;
+  }
+
+  .LChart{
+    width: 300px;
+  }
 }
+

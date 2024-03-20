@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledTable = styled.table`
-  width: 500px;
+  width: 100%;
   border-collapse: collapse;
   border: 1px solid #ddd; /* Add border to the entire table */
 `;
@@ -21,10 +21,20 @@ const StyledTd = styled.td`
   padding: 8px;
 `;
 
+const DataTableContainer = styled.div`
+  overflow-x: auto;
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 250px; /* Set a maximum height for the container */
+  max-width: 300px; /* Set a maximum width for the container */
+`;
+
 const DataTable = ({ data }) => {
+
+
+
   return (
-    <div className="datatable-container">
-      <StyledTable>
+    <DataTableContainer >
+      <StyledTable >
         <thead>
           <tr>
             <StyledTh>ID</StyledTh>
@@ -46,7 +56,7 @@ const DataTable = ({ data }) => {
           ))}
         </tbody>
       </StyledTable>
-    </div>
+    </DataTableContainer>
   );
 }
 
