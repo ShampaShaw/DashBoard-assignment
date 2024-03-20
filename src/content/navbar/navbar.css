@@ -44,42 +44,55 @@
 }
 
 .dropdown {
-  position: absolute; /* Change position to absolute */
-  top: calc(100% + 10px); /* Adjust top position as needed */
-  right: 0;
-  background-color: #b3c5ec;
+  position: absolute;
+  top: 40px; /* Adjust according to your layout */
+  right: 20px; /* Adjust according to your layout */
+  background-color: #fff;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.avatar {
+  text-align: center;
   padding: 10px;
-  min-width: 200px; /* Initial width */
-  display: flex; /* Add display flex */
-  flex-direction: column; /* Align items vertically */
 }
 
 .avatar img {
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  align-items: center;
-  display: flex;
 }
 
 .name {
-  font-size: 16px;
-  margin-bottom: 5px;
   text-align: center;
-  flex: 1; /* Allow name to expand and increase width of dropdown */
+  padding: 5px 0;
+  font-weight: bold;
+  color:#225468;
+}
+
+.settings,
+.logout {
+  text-align: center;
+  padding: 10px;
 }
 
 .settings button,
 .logout button {
-  display: flex;
-  align-items: center;
-  background-color: #b3c5ec;
-  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: #225468;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
+  outline: none;
 }
 
+.settings button:hover,
+.logout button:hover {
+  background-color: #193a47;
+}
 
 .navbar.dark {
   background-color: #333; /* Update with your dark mode background color */

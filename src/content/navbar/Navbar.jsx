@@ -4,15 +4,10 @@ import logo from '../../assests/logo.png';
 import { FaMoon } from 'react-icons/fa';
 import { IoSunnyOutline } from 'react-icons/io5';
 import { IoPersonCircleOutline } from 'react-icons/io5';
-import User from '../../assests/user.png'
+import User from '../../assests/hacker.png';
 
-const Navbar = () => {
-  const [darkMode,setDarkMode] = useState(false);
+const Navbar = ({ darkMode, toggleTheme }) => {
   const [showDropdown, setShowDropdown] = useState(false);
-
-  const handleToggleMode = () => {
-    setDarkMode(!darkMode);
-  };
 
   const handleToggleDropdown = () => {
     setShowDropdown(!showDropdown);
@@ -23,17 +18,17 @@ const Navbar = () => {
   };
 
   return (
-    <div className='navbar'>
+    <div className={`navbar ${darkMode ? 'dark' : 'bright'}`}>
       <div className='logo'>
         <img src={logo} alt='Logo' />
       </div>
       <div className='title1'>ADMIN DASHBOARD</div>
       <div className='buttons'>
-      <div className='mode-switch'>
-        <button className='mode' onClick={handleToggleMode}>
-          {darkMode ? <IoSunnyOutline className='sun' /> : <FaMoon className='moon' />}
-        </button>
-      </div>
+        <div className='mode-switch'>
+          <button className='mode' onClick={toggleTheme}>
+            {darkMode ? <IoSunnyOutline className='sun' /> : <FaMoon className='moon' />}
+          </button>
+        </div>
         <div className='account'>
           <IoPersonCircleOutline onClick={handleToggleDropdown} className='account-icon' />
           {showDropdown && (
@@ -47,7 +42,6 @@ const Navbar = () => {
               </div>
               <div className='logout'>
                 <button onClick={handleLogout}>Logout</button>
-                {/* Add other settings/options here */}
               </div>
             </div>
           )}

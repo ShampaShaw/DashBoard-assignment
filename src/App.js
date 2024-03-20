@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="app">
-    <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
+      <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
       <Dashboard />
       <Footer />
     </div>

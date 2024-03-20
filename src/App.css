@@ -3,6 +3,12 @@
     position: relative;
 }
 
+.app .dark{
+    background-color: #091627;
+    color: #fff;
+
+}
+
 
 @media (max-width: 1536px){
     .app{
