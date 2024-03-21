@@ -3,28 +3,10 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 import './scatter.css';
 
 function Circular({ data }) {
-  // Define static data as a fallback if data is undefined
-  const staticData = [
-    { year: 2015, User_Name: 5 },
-    { year: 2016, User_Name: 1 },
-    { year: 2017, User_Name: 2 },
-    { year: 2015, User_Name: 2 },
-    { year: 2016, User_Name: 5 },
-    { year: 2017, User_Name: 1 },
-    { year: 2018, User_Name: 1 },
-    { year: 2019, User_Name: 5 },
-    { year: 2020, User_Name: 5 },
-    { year: 2021, User_Name: 8 },
-    { year: 2022, User_Name: 10 },
-    { year: 2023, User_Name: 1 },
-    { year: 2024, User_Name: 1 },
-  ];
-
-  // Combine static data with new data, if available
-  const combinedData = data ? [...staticData, ...data] : staticData;
+console.log(data)
 
   // Calculate maximum value for Y-axis domain
-  const maxValue = Math.max(...combinedData.map(entry => entry.User_Name));
+  const maxValue = Math.max(...data.map(entry => entry.User_Name));
   const yDomain = [0, maxValue > 8 ? maxValue + 2 : 10];
 
   return (
@@ -34,7 +16,7 @@ function Circular({ data }) {
         <LineChart
           width={500}
           height={300}
-          data={combinedData}
+          data={data}
           margin={{
             top: 5,
             right: 30,

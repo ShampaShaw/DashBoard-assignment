@@ -107,14 +107,7 @@
   color: rgb(16, 70, 92);
 }
 
-.table {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  height: 100px;
-  width: 100%;
-}
+
 
 .charts,
 .chart-table,
@@ -205,23 +198,13 @@
     justify-content: center;
   }
 
-  .form{
-    width: 500px;
-  }
-
   .charts,
   .chart-table,
   .circular-contact {
-    flex-direction: row;
+    flex-direction: column;
     padding: 10px;
     gap: 20px;
     align-items: center;
-    justify-content: center;
-  }
-
-  .areaC{
-    width: 300px;
-  
   }
 }
 
@@ -229,19 +212,14 @@
   .container {
     gap: 20px;
   }
-
   .charts,
   .chart-table,
   .circular-contact {
+    flex-direction: column;
+    padding: 10px;
     gap: 20px;
+    align-items: center;
   }
-
-  .form{
-    width: 300px;
-  }
-
-  .LChart{
-    width: 300px;
-  }
+  
 }
 

@@ -4,11 +4,11 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 function Form({ onSubmit }) {
-  const getCurrentDate = () => {
+  const getCurrentDate = () =>{
     const date = new Date();
     const year = date.getFullYear();
     return `${year}`;
-  };
+  }
 
   const [formData, setFormData] = useState(() => {
     return {
@@ -17,7 +17,7 @@ function Form({ onSubmit }) {
       sales: '',
       productName: '',
       date: getCurrentDate(),
-        year: getCurrentDate()
+      year: getCurrentDate(), // Optionally, you can extract the year separately
     };
   });
 
@@ -34,13 +34,12 @@ function Form({ onSubmit }) {
 
     // Reset form data
     setFormData(() => ({
-      //id: prevFormData + 1,
       User_Name: '',
       email: '',
       sales: '',
       productName: '',
       date: getCurrentDate(),
-        year: getCurrentDate()
+      year: getCurrentDate(),
     }));
   };
 
@@ -87,8 +86,8 @@ function Form({ onSubmit }) {
             </div>
             <div className='input-box'>
               <DatePicker
-                selected={new Date(formData.date)}
-                onChange={(date) => setFormData({ ...formData, date: date.toISOString().split('T')[0] })}
+                selected={formData.date}
+                onChange={(date) => setFormData({ ...formData, date })}
                 dateFormat='yyyy-MM-dd'
                 placeholderText='Select Date'
                 required

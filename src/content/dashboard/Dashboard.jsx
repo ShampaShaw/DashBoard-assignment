@@ -61,13 +61,13 @@ function Dashboard() {
       </div>
       <div className='charts'>
         <Featured/>
-        <div className='LChart'><LineC/></div>
+        <LineC data = {tableData}/>
       </div>
       <div className='form-dataTable'>
-        <div className='form'><Form onSubmit={handleFormSubmit}/></div>
+        <div><Form onSubmit={handleFormSubmit}/></div>
         <div className='dataTableItem'>
           <h1>DATA TABLE</h1>
-          <DataTable data={tableData} className='table'/>
+          <DataTable data={tableData}/>
         </div>
       </div>
       <div className='chart-table'>

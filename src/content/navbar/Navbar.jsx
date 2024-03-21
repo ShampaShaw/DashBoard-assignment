@@ -18,7 +18,7 @@ const Navbar = ({ darkMode, toggleTheme }) => {
   };
 
   return (
-    <div className={`navbar ${darkMode ? 'dark' : 'bright'}`}>
+    <div className="navbar">
       <div className='logo'>
         <img src={logo} alt='Logo' />
       </div>

@@ -4,34 +4,6 @@ import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 import { FcSalesPerformance } from "react-icons/fc";
 
 function BarC({ data }) {
-  const staticData = [ // Static data
-    {
-      sales: 4000,
-      product: 'Laptop'
-    },
-    {
-      sales: 3000,
-      product: 'Mobile'
-    },
-    {
-      sales: 2000,
-      product: 'Tablet'
-    },
-    {
-      sales: 2780,
-      product: 'Desktop'
-    },
-    {
-      sales: 1890,
-      product: 'Watch'
-    },
-    {
-      sales: 2390,
-      product: 'Camera'
-    }
-  ];
-
-  const mergedData = [...staticData, ...data]; // Merge static data with new data
 
   return (
     <div className='barC'>
@@ -40,11 +12,11 @@ function BarC({ data }) {
         <BarChart
           width={500}
           height={300}
-          data={mergedData} // Use merged data
+          data={data} // Use merged data
           margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="product" />
+          <XAxis dataKey="productName" />
           <YAxis />
           <Tooltip />
           <Legend />
