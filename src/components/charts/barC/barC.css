@@ -1,7 +1,7 @@
 .barC{
     width: 500px;
     height: 450px;
-    padding: 20px;
+    padding-top: 10px;
     box-shadow: gray 0px 0px 10px;
 }
 
@@ -31,8 +31,8 @@
 
 @media screen and (max-width: 400px){
     .barC{
-        width: 250px;
-        height: 250px;
+        width: 300px;
+        height: 280px;
     }
 
     .title1{
