@@ -89,16 +89,14 @@
     .input-box input{
       width: 280px;
     }
-    .input-box input,
-    .date-picker {
+    .input-box input {
       width: 80%; /* Adjust width for smaller screens */
     }
   }
   
   @media (max-width: 480px) {
-    .input-box input,
-    .date-picker {
-      width: 100%; /* Adjust width for even smaller screens */
+    .input-box input{
+      width: 250px;
     }
   }
 

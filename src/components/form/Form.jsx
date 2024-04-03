@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import './form.css';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
 
 function Form({ onSubmit }) {
-  const getCurrentDate = () =>{
+  const getCurrentDate = () => {
     const date = new Date();
     const year = date.getFullYear();
-    return `${year}`;
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Add leading zero if needed
+    const day = String(date.getDate()).padStart(2, '0'); // Add leading zero if needed
+    return `${year}-${month}-${day}`;
   }
 
   const [formData, setFormData] = useState(() => {
@@ -17,7 +17,6 @@ function Form({ onSubmit }) {
       sales: '',
       productName: '',
       date: getCurrentDate(),
-      year: getCurrentDate(), // Optionally, you can extract the year separately
     };
   });
 
@@ -39,67 +38,64 @@ function Form({ onSubmit }) {
       sales: '',
       productName: '',
       date: getCurrentDate(),
-      year: getCurrentDate(),
     }));
   };
 
   return (
-      <div className='form'>
-        <div className='title'>ADD NEW DATA</div>
-        <form onSubmit={handleAddProduct}>
-          <div className='user-details'>
-            <div className='input-box'>
-              <input
-                type='text'
-                placeholder='Product Name'
-                value={formData.productName}
-                onChange={(e) => setFormData({ ...formData, productName: e.target.value })}
-                required
-              />
-            </div>
-            <div className='input-box'>
-              <input
-                type='number'
-                placeholder='Sales'
-                value={formData.sales}
-                onChange={(e) => setFormData({ ...formData, sales: e.target.value })}
-                required
-              />
-            </div>
-            <div className='input-box'>
-              <input
-                type='number'
-                placeholder='Enter User Name'
-                value={formData.User_Name}
-                onChange={(e) => setFormData({ ...formData, User_Name: e.target.value })}
-              />
-            </div>
-            <div className='input-box'>
-              <input
-                type='email'
-                placeholder='Enter Email'
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                required
-              />
-            </div>
-            <div className='input-box'>
-              <DatePicker
-                selected={formData.date}
-                onChange={(date) => setFormData({ ...formData, date })}
-                dateFormat='yyyy-MM-dd'
-                placeholderText='Select Date'
-                required
-              />
-            </div>
+    <div className='form'>
+      <div className='title'>ADD NEW DATA</div>
+      <form onSubmit={handleAddProduct}>
+        <div className='user-details'>
+          <div className='input-box'>
+            <input
+              type='text'
+              placeholder='Product Name'
+              value={formData.productName}
+              onChange={(e) => setFormData({ ...formData, productName: e.target.value })}
+              required
+            />
           </div>
-          <div className='button'>
-            <input type='submit' value='Add Product' />
+          <div className='input-box'>
+            <input
+              type='number'
+              placeholder='Sales'
+              value={formData.sales}
+              onChange={(e) => setFormData({ ...formData, sales: e.target.value })}
+              required
+            />
           </div>
-        </form>
-        {message && <div className='success-message'>{message}</div>}
-      </div>
-
+          <div className='input-box'>
+            <input
+              type='text'
+              placeholder='Enter User Name'
+              value={formData.User_Name}
+              onChange={(e) => setFormData({ ...formData, User_Name: e.target.value })}
+            />
+          </div>
+          <div className='input-box'>
+            <input
+              type='email'
+              placeholder='Enter Email'
+              value={formData.email}
+              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              required
+            />
+          </div>
+          <div className='input-box'>
+            <input
+              type='date'
+              value={formData.date}
+              onChange={(e) => setFormData({ ...formData, date: e.target.value })}
+              required
+            />
+          </div>
+        </div>
+        <div className='button'>
+          <input type='submit' value='Add Product' />
+        </div>
+      </form>
+      {message && <div className='success-message'>{message}</div>}
+    </div>
   );
 }
 
