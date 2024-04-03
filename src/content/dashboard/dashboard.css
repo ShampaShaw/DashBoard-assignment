@@ -103,10 +103,6 @@
   overflow: hidden;
 }
 
-.charts{
-
-}
-
 .dataTableItem{
   display: flex;
   flex-direction: column;
@@ -115,7 +111,7 @@
   width: 450px;
   height: 400px;
   gap: 10px;
-  margin-top: 30px;
+  margin: 30px;
   padding: 20px;
   border-width: 2px;
   border-radius: 4px;
@@ -161,6 +157,11 @@
     flex-direction: column;
     gap: 50px;
     padding: 10px;
+  }
+
+  .dataTableItem{
+    padding: 10px;
+    margin: 10px;
   }
 }
 
@@ -214,6 +215,10 @@
 @media (max-width: 375px) {
   .container {
     gap: 10px;
+  }
+
+  .dataTableItem{
+    padding: 10px;
   }
 }
 
