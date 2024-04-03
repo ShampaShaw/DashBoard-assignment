@@ -25,8 +25,8 @@ console.log(data)
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="year" />
-          <YAxis domain={yDomain} />
+          <XAxis dataKey="year" className='xaxis'/>
+          <YAxis domain={yDomain} className='yaxis'/>
           <Tooltip />
           <Legend />
           <Line type="monotone" dataKey="User_Name" stroke="#8884d8" activeDot={{ r: 8 }} />

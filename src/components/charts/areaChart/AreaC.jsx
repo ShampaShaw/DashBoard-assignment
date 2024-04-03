@@ -88,8 +88,8 @@ function AreaC({ data }) {
           {productNames.map((name, index) => (
             <Area key={name} type="monotone" dataKey={name} stackId="1" stroke={backgroundColors[index]} fillOpacity={1} fill={`url(#${name})`} />
           ))}
-          <XAxis dataKey="year" />
-          <YAxis />
+          <XAxis dataKey="year" className='xaxis' />
+          <YAxis className='yaxis'/>
           <CartesianGrid strokeDasharray="3 3" />
           <Tooltip />
           <Legend />
