@@ -103,6 +103,10 @@
   overflow: hidden;
 }
 
+.charts{
+
+}
+
 .dataTableItem{
   display: flex;
   flex-direction: column;

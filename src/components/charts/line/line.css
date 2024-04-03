@@ -1,6 +1,7 @@
 .line{
-    width: 550px;
-    height: 550px;
+    width: 500px;
+  height: 450px;
+  padding: 20px;
     box-shadow: gray 0px 0px 10px;
 }
 

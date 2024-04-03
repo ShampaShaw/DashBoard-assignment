@@ -1,8 +1,8 @@
 .featured {
-    width: 550px;
-    height: 550px;
+  width: 500px;
+  height: 450px;
+  padding: 20px;
     box-shadow: gray 0px 0px 10px;
-    padding: 10px;
   }
 
   .featured:hover{
@@ -15,6 +15,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 40px;
   }
   
   .i {
@@ -25,9 +26,10 @@
   .bottom {
     padding: 20px;
     display: flex;
+    height: 390px;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 10px;
     justify-content: center;
   }
   
