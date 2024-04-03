@@ -1,7 +1,57 @@
 .circular{
     width: 500px;
+    height: 450px;
+    padding: 20px;
+    box-shadow: gray 0px 0px 10px;
+}
+
+.circular:hover{
     -webkit-box-shadow: 10px 10px 5px -1px rgba(67, 103, 116, 0.62);
     -moz-box-shadow: 10px 10px 5px -1px rgba(41,80,94,0.62);
     box-shadow: 10px 10px 5px -1px rgba(41,80,94,0.62);
-    overflow: hidden;
+}
+
+
+@media screen and (max-width: 600px){
+    .circular{
+        width: 350px;
+        height: 350px;
+    }
+
+    .title1{
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .circular{
+        width: 300px;
+        height: 300px;
+    }
+
+    .title1{
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .circular{
+        width: 250px;
+        height: 250px;
+    }
+
+    .title1{
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 300px){
+    .circular{
+        width: 200px;
+        height: 200px;
+    }
+
+    .title1{
+        font-size: 15px;
+    }
 }

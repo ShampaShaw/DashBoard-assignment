@@ -44,7 +44,6 @@ function Form({ onSubmit }) {
   };
 
   return (
-    <div className='container'>
       <div className='form'>
         <div className='title'>ADD NEW DATA</div>
         <form onSubmit={handleAddProduct}>
@@ -100,7 +99,7 @@ function Form({ onSubmit }) {
         </form>
         {message && <div className='success-message'>{message}</div>}
       </div>
-    </div>
+
   );
 }
 

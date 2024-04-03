@@ -1,6 +1,10 @@
 .line{
     width: 550px;
     height: 550px;
+    box-shadow: gray 0px 0px 10px;
+}
+
+.line:hover{
     -webkit-box-shadow: 10px 10px 5px -1px rgba(67, 103, 116, 0.62);
     -moz-box-shadow: 10px 10px 5px -1px rgba(41,80,94,0.62);
     box-shadow: 10px 10px 5px -1px rgba(41,80,94,0.62);
@@ -12,4 +16,36 @@
     color: rgb(16, 70, 92);
     text-align: center;
     margin-bottom: 10px;
+}
+
+@media screen and (max-width: 600px){
+    .line{
+        width: 300px;
+        height: 300px;
+    }
+
+    .xaxis{
+        font-size: 5px;
+    }
+    .yaxis{
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .line{
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 300px){
+    .line{
+        width: 200px;
+        height: 200px;
+    }
+    .title1{
+        font-size: 15px;
+    }
+    
 }

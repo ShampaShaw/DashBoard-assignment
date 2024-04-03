@@ -24,8 +24,9 @@ const StyledTd = styled.td`
 const DataTableContainer = styled.div`
   overflow-x: auto;
   overflow-y: auto; /* Enable vertical scrolling */
-  max-height: 250px; /* Set a maximum height for the container */
+  max-height: 300px; /* Set a maximum height for the container */
   max-width: 300px; /* Set a maximum width for the container */
+  padding: 10px;
 `;
 
 const DataTable = ({ data }) => {
@@ -33,30 +34,32 @@ const DataTable = ({ data }) => {
 
 
   return (
+    <div className='datatable-container'>
     <DataTableContainer >
-      <StyledTable >
-        <thead>
-          <tr>
-            <StyledTh>ID</StyledTh>
-            <StyledTh>User Name</StyledTh>
-            <StyledTh>Email</StyledTh>
-            <StyledTh>Sales</StyledTh>
-            <StyledTh>Product</StyledTh>
+    <StyledTable >
+      <thead>
+        <tr>
+          <StyledTh>ID</StyledTh>
+          <StyledTh>User Name</StyledTh>
+          <StyledTh>Email</StyledTh>
+          <StyledTh>Sales</StyledTh>
+          <StyledTh>Product</StyledTh>
+        </tr>
+      </thead>
+      <tbody>
+        {data.map(item => (
+          <tr key={item.id}>
+            <StyledTd>{item.id}</StyledTd>
+            <StyledTd>{item.User_Name}</StyledTd>
+            <StyledTd>{item.email}</StyledTd>
+            <StyledTd>{item.sales}</StyledTd>
+            <StyledTd>{item.productName}</StyledTd>
           </tr>
-        </thead>
-        <tbody>
-          {data.map(item => (
-            <tr key={item.id}>
-              <StyledTd>{item.id}</StyledTd>
-              <StyledTd>{item.User_Name}</StyledTd>
-              <StyledTd>{item.email}</StyledTd>
-              <StyledTd>{item.sales}</StyledTd>
-              <StyledTd>{item.productName}</StyledTd>
-            </tr>
-          ))}
-        </tbody>
-      </StyledTable>
-    </DataTableContainer>
+        ))}
+      </tbody>
+    </StyledTable>
+  </DataTableContainer>
+    </div>
   );
 }
 

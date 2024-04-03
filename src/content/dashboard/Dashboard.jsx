@@ -59,6 +59,7 @@ function Dashboard() {
           <h1 className='productName'>Laptop</h1>
         </div>
       </div>
+      <div className='others'>
       <div className='charts'>
         <Featured/>
         <LineC data = {tableData}/>
@@ -71,12 +72,13 @@ function Dashboard() {
         </div>
       </div>
       <div className='chart-table'>
-      <Scatter data={tableData}/>
+        <Scatter data={tableData}/>
         <BarC data={tableData} />
       </div>
       <div className='circular-contact'>
         <AreaC/>
         <Contact/>
+      </div>
       </div>
     </div>
   )

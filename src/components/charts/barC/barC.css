@@ -1,6 +1,40 @@
 .barC{
-    width: 500px;
+    width: 550px;
+    height: 550px;
+    box-shadow: gray 0px 0px 10px;
+}
+
+.barC:hover{
     -webkit-box-shadow: 10px 10px 5px -1px rgba(67, 103, 116, 0.62);
     -moz-box-shadow: 10px 10px 5px -1px rgba(41,80,94,0.62);
     box-shadow: 10px 10px 5px -1px rgba(41,80,94,0.62);
+}
+
+@media screen and (max-width: 600px){
+    .barC{
+        width: 350px;
+        height: 350px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .barC{
+        width: 300px;
+        height: 300px;
+    }
+
+    .title1{
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .barC{
+        width: 250px;
+        height: 250px;
+    }
+
+    .title1{
+        font-size: 15px;
+    }
 }

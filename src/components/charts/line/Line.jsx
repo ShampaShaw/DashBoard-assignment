@@ -16,10 +16,11 @@ function LineC({ data }) {
           height={300}
           data={chartData}
           margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+          className='lineChart'
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="year" />
-          <YAxis />
+          <XAxis dataKey="year" className='xaxis' />
+          <YAxis className='yaxis' />
           <Tooltip />
           <Legend />
           <Line type="monotone" dataKey="Revenue" stroke="#82ca9d" />
